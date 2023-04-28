@@ -1,0 +1,37 @@
+<ejs-kanban keyField='Status' [dataSource]='remoteData' [cardSettings]='cardSettings'
+height="100%" width="100%" [swimlaneSettings]='swimlaneSettings' 
+enableTooltip='true'>
+  <e-columns>
+      <e-column headerText='To do' keyField='Open'></e-column>
+      <e-column headerText='In Progress' keyField='InProgress'></e-column>
+      <e-column headerText='Review' keyField='Review' minCount="1"></e-column>
+      <e-column headerText='Testing' keyField='Testing' maxCount="5"></e-column>
+      <e-column headerText='Done' keyField='Close'></e-column>
+  </e-columns>
+  <ng-template #tooltipTemplate let-data>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td><b>Assignee : </b></td>
+            <td>{{data.Assignee}}</td>
+          </tr>
+          <tr>
+            <td><b>Type : </b></td>
+            <td>{{data.Type}}</td>
+          </tr>
+          <tr>
+            <td><b>Estimate : </b></td>
+            <td>{{data.Estimate}}</td>
+          </tr>
+          <tr>
+            <td><b>Summary : </b></td>
+            <td>{{data.Summary}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+</ng-template>
+</ejs-kanban>
+
