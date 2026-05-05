@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
-import { CardSettingsModel, SwimlaneSettingsModel } from '@syncfusion/ej2-angular-kanban';
+import { CardSettingsModel, SwimlaneSettingsModel, KanbanModule } from '@syncfusion/ej2-angular-kanban';
 import { DataManager, ODataAdaptor } from '@syncfusion/ej2-data';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [KanbanModule]
 })
 export class AppComponent {
   title = 'example';
 
   public remoteData : DataManager = new DataManager(
     {
-      url: 'https://ej2services.syncfusion.com/production/web-services/api/Kanban',
+      url: 'https://services.syncfusion.com/angular/production/api/Kanban',
       adaptor: new ODataAdaptor,
       crossDomain: true
     }
